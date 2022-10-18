@@ -20,9 +20,9 @@ class NobelData:
         """
         winners = []
         surnames_of_winners = []
+
         for index in range(0, len(self.nobel_data["prizes"])):
-            if self.nobel_data["prizes"][index]["year"] == year and self.nobel_data["prizes"][index][
-                "catagory"] == catagory:
+            if self.nobel_data["prizes"][index]["year"] == year and self.nobel_data["prizes"][index]["catagory"] == catagory:
                 winners.append(self.nobel_data["prizes"][index]["laureates"])
             return winners
 
