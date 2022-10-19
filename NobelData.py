@@ -26,7 +26,7 @@ class NobelData:
 
             if prize_year == year and prize_catagory == catagory:
                 winners = (self.nobel_data["prizes"][index]["laureates"])
-            pass
+            break
 
         surnames_of_winners = []
 
