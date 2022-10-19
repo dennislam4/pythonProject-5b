@@ -21,7 +21,9 @@ class NobelData:
         winners = []
 
         for index in range(0, len(self.nobel_data["prizes"])):
-            if self.nobel_data["prizes"][index]["year"] == year and self.nobel_data["prizes"][index]["catagory"] == catagory:
+            prize_year = self.nobel_data["prizes"][index]["year"]
+            prize_catagory = self.nobel_data["prizes"][index]["catagory"]
+            if prize_year == year and prize_catagory == catagory:
                 winners = (self.nobel_data["prizes"][index]["laureates"])
             pass
 
