@@ -18,7 +18,7 @@ class NobelData:
         Search method for NobelData. Returns a sorted list of the surnames for the winner(s) for each searched catagory
         and year.
         """
-        winners = []
+
         surnames_of_winners = []
 
         for index in range(0, len(self.nobel_data["prizes"])):
@@ -26,13 +26,10 @@ class NobelData:
             prize_catagory = self.nobel_data["prizes"][index]["category"]
 
             if prize_year == year and prize_catagory == catagory:
-                winners.append(self.nobel_data["prizes"][index]["laureates"])
+                winners = (self.nobel_data["prizes"][index]["laureates"])
+                surnames_of_winners.append(winners[index]["surname"])
             pass
 
-        for index in range(0, len(self.nobel_data["winners"])):
-            surnames_of_winners.append(surnames_of_winners[index]["surname"])
+    # for index in range(0, len(self.nobel_data["winners"])):
+    # surnames_of_winners.append(winners[index]["surname"])
         return surnames_of_winners.sort()
-
-
-
-
