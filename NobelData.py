@@ -19,9 +19,8 @@ class NobelData:
         and year.
         """
         surnames_of_winners = []
-
+        winners = (self.nobel_data["prizes"])
         for index in self.nobel_data["prizes"]:
-            winners = (self.nobel_data["prizes"])
             prize_year = self.nobel_data["prizes"][index]["year"]
             prize_catagory = self.nobel_data["prizes"][index]["category"]
 
