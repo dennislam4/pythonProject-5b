@@ -31,5 +31,5 @@ class NobelData:
 
         for surname in range(0, len(winners)):
             surnames_of_winners.append(winners[surname]["surname"])
-        return surnames_of_winners.sort()
+        return surnames_of_winners
 
