@@ -19,13 +19,19 @@ class NobelData:
         and year.
         """
         surnames_of_winners = []
-        winners = (self.nobel_data["prizes"])
-        for nobel in winners:
-            prize_year = self.nobel_data["prizes"][nobel]["year"]
-            prize_catagory = self.nobel_data["prizes"][nobel]["category"]
+
+        for index in range(0, len(self.nobel_data["prizes"])):
+            prize_year = self.nobel_data["prizes"][index]["year"]
+            prize_catagory = self.nobel_data["prizes"][index]["category"]
 
             if prize_year == year and prize_catagory == catagory:
-                surnames_of_winners.append(winners[nobel]["surname"])
+                winners = (self.nobel_data["prizes"][index]["laureates"])
+            pass
 
-            break
+        for index in range(0, len(self.nobel_data["winners"])):
+            surnames_of_winners.append(winners[index]["surname"])
         return surnames_of_winners.sort()
+
+
+
+
