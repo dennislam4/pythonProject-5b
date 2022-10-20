@@ -29,7 +29,7 @@ class NobelData:
                 winners.append(self.nobel_data["prizes"]["laureates"])
             pass
 
-            for surname in range(0, winners):
+            for surname in range(0, len(winners)):
                 surnames_of_winners.append(winners[surname]["surname"])
         return surnames_of_winners.sort()
 
