@@ -10,7 +10,7 @@ class NobelData:
     """Represents Nobel Prize data."""
 
     def __init__(self):
-        with open('nobels.json', 'r') as infile:
+        with open('nobel.json', 'r') as infile:
             self.nobel_data = json.load(infile)
 
     def search_nobel(self, year, catagory):
@@ -19,17 +19,16 @@ class NobelData:
         and year.
         """
         winners = []
-        surnames_of_winners = []
 
-        for index in range(0, len(self.nobel_data["prizes"])):
-            prize_year = self.nobel_data["prizes"][index]["year"]
-            prize_catagory = self.nobel_data["prizes"][index]["category"]
+        for index in self.nobel_data["prizes"]:
+            prize_year = index["year"]
+            prize_catagory = index["category"]
 
             if prize_year == year and prize_catagory == catagory:
-                winners.append(self.nobel_data["prizes"]["laureates"])
-                pass
+                for l_list in index["laureates"]:
+                    winners.append(l_list["surname"])
+        winners.sort()
+        return winners
 
-        for surname in range(0, len(winners)):
-            surnames_of_winners.append(winners[surname]["surname"])
-        return surnames_of_winners
+
 
