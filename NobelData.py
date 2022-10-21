@@ -10,7 +10,7 @@ class NobelData:
     """Represents Nobel Prize data."""
 
     def __init__(self):
-        with open('nobel.json', 'r') as infile:
+        with open('nobels.json', 'r') as infile:
             self.nobel_data = json.load(infile)
 
     def search_nobel(self, year, catagory):
